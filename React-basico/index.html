@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Template</title>
+    <style>
+        picture {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+        }
+
+        img {
+            border-radius: 50%;
+            box-shadow: 0px 0px 15px #999;
+            width: 100px;
+        }
+        img.disabled {
+            opacity: .3;
+        }
+    </style>
+    <!-- Librería de REACT, el core de REACT para todas (Native, Terminal, etc) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- Esta dependencia todo el código para hacer que React funcione en el navegador -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</head>
+
+<body>
+    <h1>Women in Tech</h1>
+    <div id="app"></div>
+    <script>
+        const app = document.getElementById('app');
+        const h = React.createElement
+
+        const Avatar = params => {
+            const src = `https://randomuser.me/api/portraits/women/${params.id}.jpg`;
+
+            return h('img', {src})
+        }
+
+        ReactDOM.render(h(Avatar, { id: 1 }), app);
+        
+        /*
+        const Avatar = params => {
+            const src = `https://randomuser.me/api/portraits/women/${params.id}.jpg`;
+            return `
+            <picture>
+                <img src="${src}" />
+                <em>${params.name}</em>
+            </picture>
+            `
+        };
+
+        app.innerHTML += Avatar({ id: 1, name: "Andrea"});
+        app.innerHTML += Avatar({ id: 2, name: "Manuela"});
+        
+        app.querySelectorAll('img').forEach(img => {
+            img.addEventListener('click', () => {
+                img.classList.toggle('disabled');
+            })
+        });*/
+    </script>
+</body>
+
+</html>
