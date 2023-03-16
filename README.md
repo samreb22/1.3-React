@@ -1,4 +1,4 @@
-Práctica 1.3-React
+# Práctica 1.3-React
 
 ![image](https://user-images.githubusercontent.com/127318967/224808126-3ce3cb9b-9c92-4001-adc6-9c5aa526ea3a.png)
 
